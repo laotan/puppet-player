@@ -1,0 +1,30 @@
+{
+  "name": "puppet-player",
+  "version": "1.0.0",
+  "description": "a player for puppeteer automated testing script",
+  "repository": "https://github.com/laotan/puppet-player.git",
+  "main": "app.js",
+  "bin": {
+    "puppet-player": "./app.js"
+  },
+  "scripts": {
+    "build": "pkg package.json --out-path dist"
+  },
+  "keywords": [
+    "puppeteer player"
+  ],
+  "author": "laotan",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "carlo": "^0.9.46",
+    "monaco-editor": "^0.18.0",
+    "pkg": "^4.4.0"
+  },
+  "pkg": {
+    "assets": ["main.html", "icon.png", "node_modules/monaco-editor/**/*"],
+    "targets": [
+      "node10-macos-x64",
+      "node10-win-x64"
+    ]
+  }
+}

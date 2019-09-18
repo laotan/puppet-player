@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="icon" type="image/png" href="/icon.png">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -17,10 +18,10 @@
     .action {
         background: #1e1e1e;
         padding: 15px;
+        display: flex;
     }
 
     .action button {
-        float: right;
         background: #1890ff;
         border: 1px solid transparent;
         border-radius: 2px;
@@ -30,13 +31,27 @@
         padding: 0 14px;
         outline: 0;
         cursor: pointer;
+        margin-right: 15px;
     }
 
     .action .console {
+        flex: auto;
         color: #ff7c6b;
+        background: #383838;
         font-size: 12px;
-        line-height: 30px;
-        padding-right: 15px;
+        height: 30px;
+        line-height: 15px;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .action .console .doing {
+        color: #fff;
+    }
+
+    .action .console .done {
+        color: #0dbc79;
     }
 
     .container {
@@ -49,7 +64,7 @@
 <body>
     <div class="container">
         <div class="action">
-            <button onclick="run()">运行代码</button>
+            <button onclick="run()">Run</button>
             <div class="console"></div>
         </div>
         <div class="content" id="content"></div>
@@ -68,6 +83,7 @@
             });
         });
         function run() {
+            document.querySelector('.console').innerHTML = '<span class="doing">running...</span>'
             runInNewContext(editor.getValue())
         }
         function log(info) {

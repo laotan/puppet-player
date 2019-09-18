@@ -14,4 +14,6 @@ npm i && npm run build
 
 Copy recorder scripts and paste to editor, then click 'run'.
 
+![image](https://github.com/laotan/puppet-player/raw/master/screenshot.png)
+
 Tips: since player has auto inject `const page = await browser.newPage();` before input code, you only need input the main code begin with `await page.goto('url')`

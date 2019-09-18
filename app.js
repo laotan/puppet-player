@@ -25,9 +25,9 @@ const path = require("path");
           try{
             const page = await browser.newPage();
             ${code}
-            app.evaluate((info) => log(info), 'suceess')
+            app.evaluate((info) => log(info), '<span class="done">done</span>')
           } catch (e){
-            app.evaluate((info) => log(info), e.message || e)
+            app.evaluate((info) => log(info), '<span>' + (e.message || e) + '</span>')
           }
         })();
       `;

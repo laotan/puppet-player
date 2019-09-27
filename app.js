@@ -23,7 +23,10 @@ const path = require("path");
     const runCode = `
         (async () => {
           try{
-            const page = await browser.newPage();
+            let page = await browser.newPage();
+            browser.on('targetcreated', async target => {
+              page = await target.page();
+            })
             ${code}
             app.evaluate((info) => log(info), '<span class="done">done</span>')
           } catch (e){

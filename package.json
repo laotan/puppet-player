@@ -1,6 +1,6 @@
 {
   "name": "puppet-player",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a player for puppeteer automated testing script",
   "repository": "https://github.com/laotan/puppet-player.git",
   "main": "app.js",
